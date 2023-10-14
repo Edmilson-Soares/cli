@@ -1,0 +1,27 @@
+export default ({ z }) => ({
+    route: {
+        path: '/<%= props.n||props.name %>/<%= props.f||props.file %>',
+        prefix: '',
+        context: 'api',
+        type: 'GET',
+        render:'<%= props.n||props.name %>/<%= props.f||props.file %>',
+        handler: '<%= props.n||props.name %>.<%= props.f||props.file %>',
+        req: {
+            query: {},
+            body: {},
+            params: {},
+            headers: {},
+            cookie: {}
+
+        },
+        res: {
+            200: {},
+            400: {},
+            403: { },
+            500: {}
+
+        },
+        auth: [],
+        middlewares: []
+    }
+})

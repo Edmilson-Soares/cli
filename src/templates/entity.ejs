@@ -1,0 +1,9 @@
+export default ({ z,dayjs,crypto }) => ({
+    entity: (data) => {
+        const entity = z.object({
+            id: z.string().uuid()
+        })
+        return entity.parse(data)
+
+    }
+})

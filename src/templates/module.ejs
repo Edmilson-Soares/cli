@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package <%= props.name %>;
+
+
+service UserService{
+    rpc index (input) returns (input) {}
+}
+
+message input {
+    optional string id = 1;
+}

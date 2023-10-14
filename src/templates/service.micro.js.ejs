@@ -1,0 +1,14 @@
+export default ({ commands,module, forawait, libs, services, rx, dbs, entities }) => ({
+  execute: async(data) => {
+
+    const input=entities.entity('core::<%= props.n||props.name %>.<%= props.f||props.file %>').entity(data)
+     
+          return await (new Promise(function(resolve, reject) {
+              module('app::module.index').execute('<%= props.n||props.name %>.<%= props.f||props.file %>',input, (err, response) => {
+                  if (err) return  reject(err)
+                  rx.next(response)
+                  resolve(response);
+              })
+          }))
+  }
+})

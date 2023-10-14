@@ -1,0 +1,9 @@
+export default ({ commands,module, forawait, libs, services, rx, db, entities }) => ({
+  execute: (data) => {
+
+     const input=entities.entity('core::<%= props.n||props.name %>.<%= props.f||props.file %>').entity(data)
+     
+      rx.next(input)
+      return input
+  }
+})
